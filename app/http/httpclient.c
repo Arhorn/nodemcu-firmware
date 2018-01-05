@@ -400,7 +400,7 @@ static void ICACHE_FLASH_ATTR http_disconnect_callback( void * arg )
 				} else {
 					body = (char *) os_strstr(req->buffer, "\r\n\r\n");
 
-					if (NULL == body) {
+					if (body == NULL) {
 						  /* Find missing body */
 						  HTTPCLIENT_ERR("Body shouldn't be NULL");
 						  /* To avoid NULL body */
